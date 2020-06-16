@@ -1,0 +1,13 @@
+version: '3'
+services:
+  mssql-server-linux:
+    image: microsoft/mssql-server-linux:latest
+    ports:
+      - "1433:1433"
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: intcom@shell,2020
+    volumes:
+      - mssql-server-linux-data:/var/opt/mssql/data
+volumes:
+  mssql-server-linux-data:
