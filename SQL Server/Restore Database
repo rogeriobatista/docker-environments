@@ -1,0 +1,5 @@
+image: mssql-server-fts-sqlpackage-linux
+
+copy backup: docker cp ~/Downloads/HealthManagement-hmo.bacpac sqlserver_mssql-server-linux_1:/opt/downloads/HealthManagement-hmo.bacpac
+
+execute restore: docker exec -it sqlserver_mssql-server-linux_1 dotnet /opt/sqlpackage/sqlpackage.dll /tsn:localhost /tu:SA /tp:'intcom@shell,2020' /A:Import /tdn:HealthManagement /sf:HealthManagement-hmo.bacpac

@@ -1,7 +1,7 @@
 version: '3'
 services:
   mssql-server-linux:
-    image: microsoft/mssql-server-linux:latest
+    image: samuelmarks/mssql-server-fts-sqlpackage-linux
     ports:
       - "1433:1433"
     environment:
