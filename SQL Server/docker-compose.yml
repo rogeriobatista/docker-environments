@@ -1,12 +1,12 @@
 version: '3'
 services:
-  mssql-server-linux:
-    image: samuelmarks/mssql-server-fts-sqlpackage-linux
-    ports:
-      - "1433:1433"
+  mssql-server:
+    image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
     environment:
       ACCEPT_EULA: "Y"
-      SA_PASSWORD: intcom@shell,2020
+      SA_PASSWORD: "dhl#2021"
+    ports:
+      - "1433:1433"
     volumes:
       - mssql-server-linux-data:/var/opt/mssql/data
 volumes:
